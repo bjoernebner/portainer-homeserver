@@ -105,3 +105,7 @@
       },
       "env": [
         { "name": "APPDATA_BASE", "label": "Pfad für Configs", "default": "/var/home/user/appdata" }
+      ]
+    }
+  ]
+}
