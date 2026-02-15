@@ -29,5 +29,6 @@ services:
       - ${APPDATA_BASE}/zigbee2mqtt:/app/data:Z
       - /run/udev:/run/udev:ro
     devices:
-      - ${ZIGBEE_DONGLE}:/dev/ttyUSB0
+      - ${USB}:/dev/bus/usb
+      - ${ZIGBEE_DONGLE}:/dev/ttyACM0
     restart: unless-stopped
