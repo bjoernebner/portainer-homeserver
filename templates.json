@@ -1,0 +1,108 @@
+[
+  {
+    "type": 1,
+    "title": "Home Assistant Stack",
+    "description": "HA 2024.5 + Mosquitto + Z2M. Alles in einem Ordner.",
+    "logo": "https://raw.githubusercontent.com/DEIN_USER/DEIN_REPO/main/homeassistant/icon.png",
+    "repository": {
+      "url": "https://github.com/DEIN_USER/DEIN_REPO",
+      "stackfile": "homeassistant/docker-compose.yml"
+    },
+    "env": [
+      { "name": "APPDATA_BASE", "label": "Basis-Pfad für Configs", "default": "/var/home/user/appdata" }
+    ]
+  },
+  {
+    "type": 1,
+    "title": "Pi-hole",
+    "description": "DNS-Adblocker (V. 2024.07.0).",
+    "logo": "https://raw.githubusercontent.com/DEIN_USER/DEIN_REPO/main/pihole/icon.png",
+    "repository": {
+      "url": "https://github.com/DEIN_USER/DEIN_REPO",
+      "stackfile": "pihole/docker-compose.yml"
+    },
+    "env": [
+      { "name": "APPDATA_BASE", "label": "Basis-Pfad für Configs", "default": "/var/home/user/appdata" },
+      { "name": "PIHOLE_PASSWORD", "label": "Admin Passwort", "description": "Dein Web-Passwort" }
+    ]
+  },
+  {
+    "type": 1,
+    "title": "MeTube",
+    "description": "YouTube Downloader Web-UI.",
+    "logo": "https://raw.githubusercontent.com/DEIN_USER/DEIN_REPO/main/metube/icon.png",
+    "repository": {
+      "url": "https://github.com/DEIN_USER/DEIN_REPO",
+      "stackfile": "metube/docker-compose.yml"
+    },
+    "env": [
+      { "name": "STORAGE_BASE", "label": "Speicherort für Downloads", "default": "/var/home/user/data" }
+    ]
+  },
+  {
+    "type": 1,
+    "title": "Filebrowser",
+    "description": "Web-Dateimanager.",
+    "logo": "https://raw.githubusercontent.com/DEIN_USER/DEIN_REPO/main/filebrowser/icon.png",
+    "repository": {
+      "url": "https://github.com/DEIN_USER/DEIN_REPO",
+      "stackfile": "filebrowser/docker-compose.yml"
+    },
+    "env": [
+      { "name": "APPDATA_BASE", "label": "Basis-Pfad für Configs", "default": "/var/home/user/appdata" },
+      { "name": "STORAGE_BASE", "label": "Zu verwaltender Speicherpfad", "default": "/var/home/user/data" }
+    ]
+  },
+  {
+    "type": 1,
+    "title": "Stirling PDF",
+    "description": "Lokales PDF-Tool.",
+    "logo": "https://raw.githubusercontent.com/DEIN_USER/DEIN_REPO/main/stirling/icon.png",
+    "repository": {
+      "url": "https://github.com/DEIN_USER/DEIN_REPO",
+      "stackfile": "stirling/docker-compose.yml"
+    },
+    "env": [
+      { "name": "APPDATA_BASE", "label": "Basis-Pfad für Configs", "default": "/var/home/user/appdata" }
+    ]
+  },
+  {
+    "type": 1,
+    "title": "Heimdall",
+    "description": "App-Dashboard.",
+    "logo": "https://raw.githubusercontent.com/DEIN_USER/DEIN_REPO/main/heimdall/icon.png",
+    "repository": {
+      "url": "https://github.com/DEIN_USER/DEIN_REPO",
+      "stackfile": "heimdall/docker-compose.yml"
+    },
+    "env": [
+      { "name": "APPDATA_BASE", "label": "Basis-Pfad für Configs", "default": "/var/home/user/appdata" }
+    ]
+  },
+  {
+    "type": 1,
+    "title": "MySpeed",
+    "description": "Internet-Speedtest Monitor.",
+    "logo": "https://raw.githubusercontent.com/DEIN_USER/DEIN_REPO/main/myspeed/icon.png",
+    "repository": {
+      "url": "https://github.com/DEIN_USER/DEIN_REPO",
+      "stackfile": "myspeed/docker-compose.yml"
+    },
+    "env": [
+      { "name": "APPDATA_BASE", "label": "Basis-Pfad für Configs", "default": "/var/home/user/appdata" }
+    ]
+  },
+  {
+    "type": 1,
+    "title": "Recipya",
+    "description": "Rezept-Verwaltung.",
+    "logo": "https://raw.githubusercontent.com/DEIN_USER/DEIN_REPO/main/recipya/icon.png",
+    "repository": {
+      "url": "https://github.com/DEIN_USER/DEIN_REPO",
+      "stackfile": "recipya/docker-compose.yml"
+    },
+    "env": [
+      { "name": "APPDATA_BASE", "label": "Basis-Pfad für Configs", "default": "/var/home/user/appdata" }
+    ]
+  }
+]

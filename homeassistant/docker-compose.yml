@@ -1,0 +1,33 @@
+services:
+  homeassistant:
+    container_name: homeassistant
+    image: homeassistant/home-assistant:2024.5
+    network_mode: host
+    volumes:
+      - ${APPDATA_BASE}/homeassistant:/config:Z
+    environment:
+      - TZ=Europe/Berlin
+    restart: unless-stopped
+
+  mosquitto:
+    container_name: mosquitto
+    image: eclipse-mosquitto:2.0.19
+    ports:
+      - "1883:1883"
+    volumes:
+      - ${APPDATA_BASE}/mosquitto/config:/mosquitto/config:Z
+      - ${APPDATA_BASE}/mosquitto/data:/mosquitto/data:Z
+      - ${APPDATA_BASE}/mosquitto/log:/mosquitto/log:Z
+    restart: unless-stopped
+
+  zigbee2mqtt:
+    container_name: zigbee2mqtt
+    image: koenkk/zigbee2mqtt:1.42.0
+    ports:
+      - "8080:8080"
+    volumes:
+      - ${APPDATA_BASE}/zigbee2mqtt:/app/data:Z
+      - /run/udev:/run/udev:ro
+    devices:
+      - /dev/ttyUSB0:/dev/ttyUSB0
+    restart: unless-stopped

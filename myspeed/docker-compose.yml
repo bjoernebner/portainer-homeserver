@@ -1,0 +1,11 @@
+services:
+  myspeed:
+    container_name: myspeed
+    image: germannewsmaker/myspeed:1.0.9
+    ports:
+      - "5216:5216"
+    volumes:
+      - ${APPDATA_BASE}/myspeed:/myspeed/data:Z
+    environment:
+      - TZ=Europe/Berlin
+    restart: unless-stopped

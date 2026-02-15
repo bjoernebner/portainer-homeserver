@@ -1,0 +1,13 @@
+services:
+  stirling-pdf:
+    container_name: stirling-pdf
+    image: stirlingtools/stirling-pdf:0.35.0
+    ports:
+      - "84:8080"
+    volumes:
+      - ${APPDATA_BASE}/stirling/tessdata:/usr/share/tessdata:Z
+    environment:
+      - DOCKER_ENABLE_SECURITY=false
+      - INSTALL_BOOK_AND_ADVANCED_HTML_OPS=false
+      - LANGS=en_US
+    restart: unless-stopped

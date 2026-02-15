@@ -1,0 +1,14 @@
+services:
+  filebrowser:
+    container_name: filebrowser
+    image: filebrowser/filebrowser:v2.23.0
+    ports:
+      - "10180:80"
+    volumes:
+      - ${STORAGE_BASE}:/srv:Z
+      - ${APPDATA_BASE}/filebrowser/db:/db:Z
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Berlin
+    restart: unless-stopped
