@@ -3,9 +3,9 @@
     "type": 1,
     "title": "Home Assistant Stack",
     "description": "HA 2024.5 + Mosquitto + Z2M. Alles in einem Ordner.",
-    "logo": "https://raw.githubusercontent.com/DEIN_USER/DEIN_REPO/main/homeassistant/icon.png",
+    "logo": "https://raw.githubusercontent.com/bjoernebner/portainer-homeserver/main/homeassistant/icon.png",
     "repository": {
-      "url": "https://github.com/DEIN_USER/DEIN_REPO",
+      "url": "https://github.com/bjoernebner/portainer-homeserver",
       "stackfile": "homeassistant/docker-compose.yml"
     },
     "env": [
@@ -16,9 +16,9 @@
     "type": 1,
     "title": "Pi-hole",
     "description": "DNS-Adblocker (V. 2024.07.0).",
-    "logo": "https://raw.githubusercontent.com/DEIN_USER/DEIN_REPO/main/pihole/icon.png",
+    "logo": "https://raw.githubusercontent.com/bjoernebner/portainer-homeserver/main/pihole/icon.png",
     "repository": {
-      "url": "https://github.com/DEIN_USER/DEIN_REPO",
+      "url": "https://github.com/bjoernebner/portainer-homeserver",
       "stackfile": "pihole/docker-compose.yml"
     },
     "env": [
@@ -30,9 +30,9 @@
     "type": 1,
     "title": "MeTube",
     "description": "YouTube Downloader Web-UI.",
-    "logo": "https://raw.githubusercontent.com/DEIN_USER/DEIN_REPO/main/metube/icon.png",
+    "logo": "https://raw.githubusercontent.com/bjoernebner/portainer-homeserver/main/metube/icon.png",
     "repository": {
-      "url": "https://github.com/DEIN_USER/DEIN_REPO",
+      "url": "https://github.com/bjoernebner/portainer-homeserver",
       "stackfile": "metube/docker-compose.yml"
     },
     "env": [
@@ -43,9 +43,9 @@
     "type": 1,
     "title": "Filebrowser",
     "description": "Web-Dateimanager.",
-    "logo": "https://raw.githubusercontent.com/DEIN_USER/DEIN_REPO/main/filebrowser/icon.png",
+    "logo": "https://raw.githubusercontent.com/bjoernebner/portainer-homeserver/main/filebrowser/icon.png",
     "repository": {
-      "url": "https://github.com/DEIN_USER/DEIN_REPO",
+      "url": "https://github.com/bjoernebner/portainer-homeserver",
       "stackfile": "filebrowser/docker-compose.yml"
     },
     "env": [
@@ -57,9 +57,9 @@
     "type": 1,
     "title": "Stirling PDF",
     "description": "Lokales PDF-Tool.",
-    "logo": "https://raw.githubusercontent.com/DEIN_USER/DEIN_REPO/main/stirling/icon.png",
+    "logo": "https://raw.githubusercontent.com/bjoernebner/portainer-homeserver/main/stirling/icon.png",
     "repository": {
-      "url": "https://github.com/DEIN_USER/DEIN_REPO",
+      "url": "https://github.com/bjoernebner/portainer-homeserver",
       "stackfile": "stirling/docker-compose.yml"
     },
     "env": [
@@ -70,9 +70,9 @@
     "type": 1,
     "title": "Heimdall",
     "description": "App-Dashboard.",
-    "logo": "https://raw.githubusercontent.com/DEIN_USER/DEIN_REPO/main/heimdall/icon.png",
+    "logo": "https://raw.githubusercontent.com/bjoernebner/portainer-homeserver/main/heimdall/icon.png",
     "repository": {
-      "url": "https://github.com/DEIN_USER/DEIN_REPO",
+      "url": "https://github.com/Dbjoernebner/portainer-homeserver",
       "stackfile": "heimdall/docker-compose.yml"
     },
     "env": [
@@ -83,9 +83,9 @@
     "type": 1,
     "title": "MySpeed",
     "description": "Internet-Speedtest Monitor.",
-    "logo": "https://raw.githubusercontent.com/DEIN_USER/DEIN_REPO/main/myspeed/icon.png",
+    "logo": "https://raw.githubusercontent.com/bjoernebner/portainer-homeserver/main/myspeed/icon.png",
     "repository": {
-      "url": "https://github.com/DEIN_USER/DEIN_REPO",
+      "url": "https://github.com/bjoernebner/portainer-homeserver",
       "stackfile": "myspeed/docker-compose.yml"
     },
     "env": [
@@ -96,9 +96,9 @@
     "type": 1,
     "title": "Recipya",
     "description": "Rezept-Verwaltung.",
-    "logo": "https://raw.githubusercontent.com/DEIN_USER/DEIN_REPO/main/recipya/icon.png",
+    "logo": "https://raw.githubusercontent.com/bjoernebner/portainer-homeserver/main/recipya/icon.png",
     "repository": {
-      "url": "https://github.com/DEIN_USER/DEIN_REPO",
+      "url": "https://github.com/bjoernebner/portainer-homeserver",
       "stackfile": "recipya/docker-compose.yml"
     },
     "env": [
