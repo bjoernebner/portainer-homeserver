@@ -4,16 +4,12 @@
     {
       "type": 1,
       "title": "Home Assistant",
-      "description": "Smart Home Zentrale - Version 2024.5",
+      "description": "Smart Home Zentrale - CasaOS Version 2024.5",
       "logo": "https://raw.githubusercontent.com/bjoernebner/portainer-homeserver/main/homeassistant/icon.png",
       "image": "homeassistant/home-assistant:2024.5",
       "network": "host",
       "volumes": [
-        { "container": "/config", "bind": "${APPDATA_BASE}/homeassistant" },
-        { "container": "/etc/localtime", "bind": "/etc/localtime", "readonly": true }
-      ],
-      "env": [
-        { "name": "APPDATA_BASE", "label": "Pfad für Configs", "default": "/var/home/user/appdata" }
+        { "container": "/config", "bind": "/var/home/user/appdata/homeassistant" }
       ]
     },
     {
@@ -23,22 +19,19 @@
       "logo": "https://raw.githubusercontent.com/bjoernebner/portainer-homeserver/main/homeassistant/icon.png",
       "image": "koenkk/zigbee2mqtt:1.42.0",
       "volumes": [
-        { "container": "/app/data", "bind": "${APPDATA_BASE}/zigbee2mqtt" }
+        { "container": "/app/data", "bind": "/var/home/user/appdata/zigbee2mqtt" }
       ],
       "devices": [
-        { "host": "${ZIGBEE_DONGLE}", "container": "/dev/ttyACM0" },
-        { "host": "${USB}", "container": "/dev/bus/usb" }
+        { "host": "/dev/serial/by-id/usb-ITead_Sonoff_Zigbee_3.0_USB_Dongle_Plus_xxx", "container": "/dev/ttyUSB0" }
       ],
       "env": [
-        { "name": "APPDATA_BASE", "label": "Pfad für Configs", "default": "/var/home/user/appdata" },
-        { "name": "USB", "label": "USB Pfad", "default": "/dev/bus/usb" },
-        { "name": "ZIGBEE_DONGLE", "label": "Stick Pfad", "default": "/dev/serial/by-id/usb-ITead_Sonoff_Zigbee_3.0_USB_Dongle_Plus_xxx" }
+        { "name": "TZ", "label": "Zeitzone", "default": "Europe/Berlin" }
       ]
     },
     {
       "type": 1,
       "title": "Pi-hole",
-      "description": "DNS-Adblocker - Version 2024.07.0",
+      "description": "DNS-Adblocker - CasaOS Version 2024.07.0",
       "logo": "https://raw.githubusercontent.com/bjoernebner/portainer-homeserver/main/pihole/icon.png",
       "image": "pihole/pihole:2024.07.0",
       "ports": [
@@ -47,27 +40,34 @@
         "8800:80/tcp"
       ],
       "volumes": [
-        { "container": "/etc/pihole", "bind": "${APPDATA_BASE}/pihole" },
-        { "container": "/etc/dnsmasq.d", "bind": "${APPDATA_BASE}/dnsmasq.d" }
+        { "container": "/etc/pihole", "bind": "/var/home/user/appdata/pihole" },
+        { "container": "/etc/dnsmasq.d", "bind": "/var/home/user/appdata/dnsmasq.d" }
       ],
       "env": [
-        { "name": "APPDATA_BASE", "label": "Pfad für Configs", "default": "/var/home/user/appdata" },
         { "name": "WEBPASSWORD", "label": "Admin Passwort" },
         { "name": "TZ", "label": "Zeitzone", "default": "Europe/Berlin" }
       ]
     },
     {
       "type": 1,
+      "title": "MySpeed",
+      "description": "Speedtest Monitor - Version 1.0.9",
+      "logo": "https://raw.githubusercontent.com/bjoernebner/portainer-homeserver/main/myspeed/icon.png",
+      "image": "gnmyt/myspeed:1.0.9",
+      "ports": ["8084:5216/tcp"],
+      "volumes": [
+        { "container": "/myspeed/data", "bind": "/var/home/user/appdata/myspeed" }
+      ]
+    },
+    {
+      "type": 1,
       "title": "MeTube",
-      "description": "YouTube Downloader - Stable Build",
+      "description": "YouTube Downloader - Version 2024.01.25",
       "logo": "https://raw.githubusercontent.com/bjoernebner/portainer-homeserver/main/metube/icon.png",
       "image": "alexta69/metube:2024.01.25",
       "ports": ["8081:8081/tcp"],
       "volumes": [
-        { "container": "/downloads", "bind": "${STORAGE_BASE}/downloads" }
-      ],
-      "env": [
-        { "name": "STORAGE_BASE", "label": "Download-Pfad", "default": "/var/home/user/data" }
+        { "container": "/downloads", "bind": "/var/home/user/data/downloads" }
       ]
     },
     {
@@ -78,54 +78,41 @@
       "image": "filebrowser/filebrowser:v2.30.0",
       "ports": ["8077:80/tcp"],
       "volumes": [
-        { "container": "/config", "bind": "${APPDATA_BASE}/filebrowser" },
-        { "container": "/srv", "bind": "${STORAGE_BASE}" }
-      ],
-      "env": [
-        { "name": "APPDATA_BASE", "label": "Pfad für Configs", "default": "/var/home/user/appdata" },
-        { "name": "STORAGE_BASE", "label": "Speicherpfad", "default": "/var/home/user/data" }
+        { "container": "/config", "bind": "/var/home/user/appdata/filebrowser" },
+        { "container": "/srv", "bind": "/var/home/user/data" }
       ]
     },
     {
       "type": 1,
       "title": "Stirling PDF",
-      "description": "PDF Tool - Version 0.25.1",
+      "description": "PDF Tool - Stable Release",
       "logo": "https://raw.githubusercontent.com/bjoernebner/portainer-homeserver/main/stirling-pdf/icon.png",
-      "image": "froodle/s-pdf:0.25.1",
+      "image": "stirlingtools/stirling-pdf:latest",
       "ports": ["8079:8080/tcp"],
       "volumes": [
-        { "container": "/configs", "bind": "${APPDATA_BASE}/stirling-pdf/configs" }
-      ],
-      "env": [
-        { "name": "APPDATA_BASE", "label": "Pfad für Configs", "default": "/var/home/user/appdata" }
-      ]
-    },
-    {
-      "type": 1,
-      "title": "MySpeed",
-      "description": "Speedtest - Version 1.0.9",
-      "logo": "https://raw.githubusercontent.com/bjoernebner/portainer-homeserver/main/myspeed/icon.png",
-      "image": "gnmyt/myspeed:v1.0.9",
-      "ports": ["8084:5216/tcp"],
-      "volumes": [
-        { "container": "/myspeed/data", "bind": "${APPDATA_BASE}/myspeed" }
-      ],
-      "env": [
-        { "name": "APPDATA_BASE", "label": "Pfad für Configs", "default": "/var/home/user/appdata" }
+        { "container": "/configs", "bind": "/var/home/user/appdata/stirling-pdf/configs" }
       ]
     },
     {
       "type": 1,
       "title": "Heimdall",
-      "description": "Dashboard - Version 2.5.8",
+      "description": "Dashboard - LinuxServer Build",
       "logo": "https://raw.githubusercontent.com/bjoernebner/portainer-homeserver/main/heimdall/icon.png",
-      "image": "linuxserver/heimdall:2.5.8",
+      "image": "linuxserver/heimdall:latest",
       "ports": ["8082:80/tcp"],
       "volumes": [
-        { "container": "/config", "bind": "${APPDATA_BASE}/heimdall" }
-      ],
-      "env": [
-        { "name": "APPDATA_BASE", "label": "Pfad für Configs", "default": "/var/home/user/appdata" }
+        { "container": "/config", "bind": "/var/home/user/appdata/heimdall" }
+      ]
+    },
+    {
+      "type": 1,
+      "title": "Recipya",
+      "description": "Rezeptverwaltung - Version Stable",
+      "logo": "https://raw.githubusercontent.com/bjoernebner/portainer-homeserver/main/recipya/icon.png",
+      "image": "recipya/recipya:latest",
+      "ports": ["8078:80/tcp"],
+      "volumes": [
+        { "container": "/app/data", "bind": "/var/home/user/appdata/recipya" }
       ]
     }
   ]
