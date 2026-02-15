@@ -7,9 +7,8 @@
          "description":"HA 2024.5 + Mosquitto + Z2M",
          "logo":"https://raw.githubusercontent.com/bjoernebner/portainer-homeserver/main/homeassistant/icon.png",
          "repository":{
-            "url":"https://github.com/bjoernebner/portainer-homeserver.git",
-            "stackfile":"homeassistant/docker-compose.yml",
-            "branch":"main"
+            "url":"https://github.com/bjoernebner/portainer-homeserver",
+            "stackfile":"homeassistant/docker-compose.yml"
          },
          "env":[
             {
@@ -37,9 +36,8 @@
          "description":"DNS-Adblocker mit UI-Passwort",
          "logo":"https://raw.githubusercontent.com/bjoernebner/portainer-homeserver/main/pihole/icon.png",
          "repository":{
-            "url":"https://github.com/bjoernebner/portainer-homeserver.git",
-            "stackfile":"pihole/docker-compose.yml",
-            "branch":"main"
+            "url":"https://github.com/bjoernebner/portainer-homeserver",
+            "stackfile":"pihole/docker-compose.yml"
          },
          "env":[
             {
@@ -59,9 +57,8 @@
          "description":"YouTube Downloader",
          "logo":"https://raw.githubusercontent.com/bjoernebner/portainer-homeserver/main/metube/icon.png",
          "repository":{
-            "url":"https://github.com/bjoernebner/portainer-homeserver.git",
-            "stackfile":"metube/docker-compose.yml",
-            "branch":"main"
+            "url":"https://github.com/bjoernebner/portainer-homeserver",
+            "stackfile":"metube/docker-compose.yml"
          },
          "env":[
             {
@@ -77,9 +74,8 @@
          "description":"Web-Dateimanager",
          "logo":"https://raw.githubusercontent.com/bjoernebner/portainer-homeserver/main/filebrowser/icon.png",
          "repository":{
-            "url":"https://github.com/bjoernebner/portainer-homeserver.git",
-            "stackfile":"filebrowser/docker-compose.yml",
-            "branch":"main"
+            "url":"https://github.com/bjoernebner/portainer-homeserver",
+            "stackfile":"filebrowser/docker-compose.yml"
          },
          "env":[
             {
@@ -98,11 +94,10 @@
          "type":1,
          "title":"Stirling PDF",
          "description":"PDF Bearbeitung",
-         "logo":"https://raw.githubusercontent.com/bjoernebner/portainer-homeserver/main/stirling/icon.png",
+         "logo":"https://raw.githubusercontent.com/bjoernebner/portainer-homeserver/main/stirling-pdf/icon.png",
          "repository":{
-            "url":"https://github.com/bjoernebner/portainer-homeserver.git",
-            "stackfile":"stirling/docker-compose.yml",
-            "branch":"main"
+            "url":"https://github.com/bjoernebner/portainer-homeserver",
+            "stackfile":"stirling-pdf/docker-compose.yml"
          },
          "env":[
             {
@@ -118,9 +113,8 @@
          "description":"Dashboard",
          "logo":"https://raw.githubusercontent.com/bjoernebner/portainer-homeserver/main/heimdall/icon.png",
          "repository":{
-            "url":"https://github.com/bjoernebner/portainer-homeserver.git",
-            "stackfile":"heimdall/docker-compose.yml",
-            "branch":"main"
+            "url":"https://github.com/bjoernebner/portainer-homeserver",
+            "stackfile":"heimdall/docker-compose.yml"
          },
          "env":[
             {
@@ -133,4 +127,36 @@
       {
          "type":1,
          "title":"MySpeed",
-         "description":"Speedtest Monitor
+         "description":"Speedtest Monitor",
+         "logo":"https://raw.githubusercontent.com/bjoernebner/portainer-homeserver/main/myspeed/icon.png",
+         "repository":{
+            "url":"https://github.com/bjoernebner/portainer-homeserver",
+            "stackfile":"myspeed/docker-compose.yml"
+         },
+         "env":[
+            {
+               "name":"APPDATA_BASE",
+               "label":"Pfad für Configs",
+               "default":"/var/home/user/appdata"
+            }
+         ]
+      },
+      {
+         "type":1,
+         "title":"Recipya",
+         "description":"Rezeptverwaltung",
+         "logo":"https://raw.githubusercontent.com/bjoernebner/portainer-homeserver/main/recipya/icon.png",
+         "repository":{
+            "url":"https://github.com/bjoernebner/portainer-homeserver",
+            "stackfile":"recipya/docker-compose.yml"
+         },
+         "env":[
+            {
+               "name":"APPDATA_BASE",
+               "label":"Pfad für Configs",
+               "default":"/var/home/user/appdata"
+            }
+         ]
+      }
+   ]
+}
