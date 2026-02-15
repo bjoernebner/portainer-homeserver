@@ -26,10 +26,12 @@
         { "container": "/app/data", "bind": "${APPDATA_BASE}/zigbee2mqtt" }
       ],
       "devices": [
-        { "host": "${ZIGBEE_DONGLE}", "container": "/dev/ttyUSB0" }
+        { "host": "${ZIGBEE_DONGLE}", "container": "/dev/ttyACM0" },
+        { "host": "${USB}", "container": "/dev/bus/usb" }
       ],
       "env": [
         { "name": "APPDATA_BASE", "label": "Pfad für Configs", "default": "/var/home/user/appdata" },
+        { "name": "USB", "label": "USB Pfad", "default": "/dev/bus/usb" },
         { "name": "ZIGBEE_DONGLE", "label": "Stick Pfad", "default": "/dev/serial/by-id/usb-ITead_Sonoff_Zigbee_3.0_USB_Dongle_Plus_xxx" }
       ]
     },
