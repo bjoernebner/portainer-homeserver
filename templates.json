@@ -19,7 +19,8 @@
       "logo": "https://raw.githubusercontent.com/bjoernebner/portainer-homeserver/main/homeassistant/icon.png",
       "image": "koenkk/zigbee2mqtt:1.42.0",
       "volumes": [
-        { "container": "/app/data", "bind": "/var/home/user/appdata/zigbee2mqtt" }
+        { "container": "/app/data", "bind": "/var/home/user/appdata/zigbee2mqtt" },
+        { "container": "/run/udev", "bind": "/run/udev", "readonly": true }
       ],
       "devices": [
         { "host": "/dev/serial/by-id/usb-ITead_Sonoff_Zigbee_3.0_USB_Dongle_Plus_xxx", "container": "/dev/ttyACM0" }
