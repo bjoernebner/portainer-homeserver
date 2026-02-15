@@ -59,7 +59,7 @@
       "type": 1,
       "title": "Stirling PDF",
       "description": "PDF Bearbeitung",
-      "logo": "https://raw.githubusercontent.com/bjoernebner/portainer-homeserver/main/stirling/icon.png",
+      "logo": "https://raw.githubusercontent.com/bjoernebner/portainer-homeserver/main/stirling-pdf/icon.png",
       "repository": {
         "url": "https://github.com/bjoernebner/portainer-homeserver",
         "stackfile": "stirling/docker-compose.yml"
