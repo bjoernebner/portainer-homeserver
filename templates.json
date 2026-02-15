@@ -1,4 +1,6 @@
 [
+  "version": "3",
+  "templates": [
   {
     "type": 1,
     "title": "Home Assistant Stack",
@@ -105,4 +107,5 @@
       { "name": "APPDATA_BASE", "label": "Basis-Pfad für Configs", "default": "/var/home/user/appdata" }
     ]
   }
+  ]
 ]
