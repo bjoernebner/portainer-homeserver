@@ -19,8 +19,14 @@
             {
                "name":"ZIGBEE_DONGLE",
                "label":"Zigbee Dongle Pfad",
-               "description":"Z.B. /dev/ttyUSB0 oder /dev/ttyACM0",
-               "default":"/dev/ttyUSB0"
+               "description":"Z.B. /dev/ttyACM0",
+               "default":"/dev/serial/by-id/usb-ITead_Sonoff_Zigbee_3.0_USB_Dongle_Plus_xxx-if00-port0"
+            },
+            {
+               "name":"USB",
+               "label":"USB Pfad",
+               "description":"Z.B. /dev/bus/usb",
+               "default":"/dev/bus/usb"
             }
          ]
       },
